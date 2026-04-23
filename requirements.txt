@@ -1,0 +1,30 @@
+# requirements.txt
+# Python dependencies for TFG - IoT_JA4_plus project
+
+# Network and Data Analysis
+scapy
+pandas
+numpy
+
+
+# Visualization
+matplotlib
+seaborn
+plotly
+kaleido
+plotly_get_chrome
+
+# Utilities
+jupyter
+tqdm
+joblib
+openpyxl
+
+tpot # para buecsqueda automática de modelos de machine learning
+scikit-learn # para machine learning,
+joblib # para cargar el modelo entrenado
+
+# NOTA: Las siguientes herramientas se instalan por separado:
+# tshark -> sudo apt install tshark
+# 4.0.6 o superior
+# wireshark -> sudo apt install wireshark
