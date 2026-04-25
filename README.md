@@ -1,7 +1,7 @@
 # TFG_GemmaBeatrizVate
-IoT network traffic classification with JA4+ fingerprints
+### IoT network traffic classification with JA4+ fingerprints
 
-This Thesis focuses on identifying and classifying network traffic using digital fingerprints based on the JA4+ algorithms. The main goal is to develop and evaluate an efficient method for analyzing traffic patterns in network environments, making it possible to distinguish between different IoT and other traffic behaviors with precision, even when communications are encrypted.
+This thesis focuses on identifying and classifying network traffic using digital fingerprints based on the JA4+ algorithms. The main goal is to develop and evaluate an efficient method for analyzing traffic patterns in network environments, making it possible to distinguish between different IoT and other traffic behaviors with precision, even when communications are encrypted.
 
 ## Environment
 
