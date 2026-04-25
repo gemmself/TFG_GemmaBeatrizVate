@@ -1,7 +1,0 @@
-{
-    "python.analysis.extraPaths": [
-        "./2_Development/2_1_Preprocessing",
-        "./2_Development/2_1_Preprocessing/combine_zeekfingerprints",
-        "./2_Development/2_1_Preprocessing"
-    ]
-}
