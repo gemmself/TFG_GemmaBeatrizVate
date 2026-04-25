@@ -186,6 +186,8 @@ def create_individual_files(df, raw_features_df, fingerprint_cols_present,
         return individual_files
     
     output_path = Path(output_file)
+    individual_dir = output_path.parent / "individual_raw_fingerprints"
+    individual_dir.mkdir(parents=True, exist_ok=True)
     
     for fp_col, (fp_name, parser_func) in FINGERPRINT_PARSERS.items():
         if fp_col in fingerprint_cols_present:
@@ -201,7 +203,7 @@ def create_individual_files(df, raw_features_df, fingerprint_cols_present,
             if fp_name in ['JA4L', 'JA4LS'] and not rtt_df.empty:
                 fp_individual = pd.concat([fp_individual, rtt_df], axis=1)
             
-            individual_path = output_path.parent / f"{fp_name}_raw.csv"
+            individual_path = individual_dir / f"{fp_name}_raw.csv"
             fp_individual.to_csv(individual_path, index=False)
             individual_files.append(str(individual_path))
             print(f"   Individual file saved: {individual_path}")

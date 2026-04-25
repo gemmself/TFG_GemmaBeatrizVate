@@ -1,4 +1,4 @@
-# --- MAPPING MAC a DISPOSITIVO IOT  ---
+# --- MAPPING MAC to IoT DEVICE ---
 MAC_TO_DEVICE = {
     "ac:17:02:05:34:27": "Fibaro_Home_Center_Lite_Hub",
     "84:7a:b6:64:62:58": "Yi_Indoor_Camera",

@@ -111,7 +111,7 @@ python 2_Development/2_1_Preprocessing/extract_raw_features.py
 
 This script takes the combined CSV generated in the previous step and splits the JA4+ fingerprints into simpler columns for later analysis or model training.
 
-The fingerprint parameters extracted in this step are based on the JA4+ format described by FoxIO in [JA4+ Network Fingerprinting](https://blog.foxio.io/ja4+-network-fingerprinting).
+The fingerprint parameters extracted in this step are based on the JA4+ format described by FoxIO in [JA4+ Network Fingerprinting](https://blog.foxio.io/ja4+-network-fingerprinting), with the TCP fingerprint parameters based on [JA4T: TCP Fingerprinting](https://foxio.io/blog/ja4t-tcp-fingerprinting).
 
 Files and modules used:
 
@@ -137,8 +137,45 @@ Outputs:
 
 - `1_Data/raw_fingerprints/raw_features.csv`
 - `1_Data/raw_fingerprints/raw_features_clean.csv`, if complete rows without null values exist.
-- Individual files in `1_Data/raw_fingerprints/`, for example `JA4_raw.csv`, `JA4S_raw.csv`, `JA4X_raw.csv`, `JA4T_raw.csv`, `JA4TS_raw.csv`, and `SNI_raw.csv`.
+- Individual files in `1_Data/raw_fingerprints/individual_raw_fingerprints/`, for example `JA4_raw.csv`, `JA4S_raw.csv`, `JA4X_raw.csv`, `JA4T_raw.csv`, `JA4TS_raw.csv`, and `SNI_raw.csv`.
 
 The execution proof is saved in:
 
 - `1_Data/raw_fingerprints/raw_features.txt`
+
+## STEP 4: Model Evaluation
+
+The modeling phase compares different ways of using JA4+ information to classify IoT network traffic.
+
+### Model groups
+
+- `dictionary_full_fingerprints`: dictionary-based classifiers using complete JA4+ fingerprint combinations.
+- `rf_full_fingerprints`: Random Forest models using complete fingerprint strings.
+- `rf_features`: Random Forest models using parsed fingerprint components as features.
+- `rf_features_IoT_category`: Random Forest models focused on broader IoT category classification.
+
+
+### Dictionary full-fingerprint models
+
+The first model group is located in:
+
+- `2_Development/2_3_Models/dictionary_full_fingerprints/`
+
+These notebooks evaluate device classification using complete fingerprint strings, without decomposing them into individual features. Each notebook tests a different fingerprint combination:
+
+- `dictionary_ja4_full_fingerprint.ipynb`: uses only the conventional `JA4` client fingerprint.
+- `dictionary_ja4_ja4x_full_fingerprint.ipynb`: uses `JA4` together with certificate fingerprint `JA4X`.
+- `dictionary_ja4+ja4s_full_fingerprint.ipynb`: uses client and server TLS fingerprints.
+- `dictionary_ja4+ja4s+ja4ts_full_fingerprint.ipynb`: adds server TCP fingerprint `JA4TS`.
+- `dictionary_ja4+ja4s+ja4t+ja4ts_full_fingerprint.ipynb`: adds both client and server and TCP fingerprints.
+- `dictionary_ja4+_full_fingerprint.ipynb`: uses the available full JA4+ combination.
+
+Evaluation summary:
+
+- Each row is represented as a full fingerprint bundle.
+- Devices with too few samples are removed.
+- Samples are split per device into `70% train`, `10% validation`, and `20% test`.
+- A dictionary is built from the training split, linking each known fingerprint bundle to the device where it appeared.
+- Validation data is used to select the best matching strategy.
+- Test data is evaluated with accuracy, macro precision, macro recall, macro F1, top-k accuracy, prediction time, and dictionary usage rates.
+- Predictions prioritize exact fingerprint matches, then partial fingerprint matches, and finally fallback rules.
