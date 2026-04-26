@@ -155,7 +155,7 @@ The modeling phase compares different ways of using JA4+ information to classify
 - `rf_features_IoT_category`: Random Forest models focused on broader IoT category classification.
 
 
-### Dictionary full-fingerprint models
+### 4.1 Dictionary full-fingerprint models
 
 The first model group is located in:
 
