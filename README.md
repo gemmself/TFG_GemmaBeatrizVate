@@ -317,9 +317,9 @@ Evaluation summary:
 - Final test evaluation reports accuracy, macro precision, macro recall, macro F1, top-k accuracy, prediction time, and confusion matrices.
 - A top-feature retraining step rebuilds the model using only the most relevant original parsed fields and compares it with the full-feature model.
 
-## Results
+## Results using complete strings
 
-The following table summarizes the final test results reported in the notebooks. `Top-1` is equivalent to standard test accuracy. For the Random Forest decomposed-feature notebooks, the values shown correspond to the main model using all selected features for that experiment, not the later top-feature retraining experiment.
+The following table summarizes the final test results reported in the notebooks. `Top-1` is equivalent to standard test accuracy. 
 
 | Model | Representation | Features | Macro F1 | Top-1 | Top-3 | Top-5 |
 |:---:|:---:|---|:---:|:---:|:---:|:---:|
@@ -335,13 +335,6 @@ The following table summarizes the final test results reported in the notebooks.
 | Random Forest | Full fingerprint | `JA4 + JA4S + JA4TS` | 0.6127 | 0.7941 | 0.9265 | 1.0000 |
 | Random Forest | Full fingerprint | `JA4 + JA4S + JA4T + JA4TS` | 0.5721 | 0.7941 | 0.9265 | 1.0000 |
 | Random Forest | Full fingerprint | `JA4+` | 0.8333 | 0.9091 | 1.0000 | 1.0000 |
-| Random Forest | Decomposed features | `JA4` | 0.6858 | 0.7736 | 0.9916 | 0.9992 |
-| Random Forest | Decomposed features | `JA4 + SNI` | 0.8603 | 0.8394 | 0.9991 | 0.9991 |
-| Random Forest | Decomposed features | `JA4 + JA4S` | 0.6873 | 0.7979 | 0.9741 | 0.9948 |
-| Random Forest | Decomposed features | `JA4 + JA4X` | 0.5829 | 0.7742 | 0.9839 | 1.0000 |
-| Random Forest | Decomposed features | `JA4 + JA4S + JA4TS` | 0.5741 | 0.7941 | 0.9265 | 1.0000 |
-| Random Forest | Decomposed features | `JA4 + JA4S + JA4T + JA4TS` | 0.6039 | 0.7941 | 0.9265 | 1.0000 |
-| Random Forest | Decomposed features | `JA4+` | 0.8333 | 0.9091 | 1.0000 | 1.0000 |
 
 ### Decomposed Random Forest features
 
