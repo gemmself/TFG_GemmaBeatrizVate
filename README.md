@@ -317,7 +317,8 @@ Evaluation summary:
 - Final test evaluation reports accuracy, macro precision, macro recall, macro F1, top-k accuracy, prediction time, and confusion matrices.
 - A top-feature retraining step rebuilds the model using only the most relevant original parsed fields and compares it with the full-feature model.
 
-## Results using complete strings
+## Results 
+### Full-fingerprint models
 
 The following table summarizes the final test results reported in the notebooks. `Top-1` is equivalent to standard test accuracy. 
 
