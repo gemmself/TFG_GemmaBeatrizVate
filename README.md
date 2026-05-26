@@ -118,12 +118,14 @@ The `JA4X` extraction was implemented using the FoxIO Python `ja4x.py` script as
 
 ### Files and modules used
 
-- `2_Development/2_1_Preprocessing/combine_zeek_fingerprints.py`: main entry point. It orchestrates the complete combination process.
-- `2_Development/2_1_Preprocessing/combine_zeek_fingerprints/config.py`: defines input and output paths, the source PCAP, the Zeek log directory, and the `MAC_TO_DEVICE` and `MAC_TO_CATEGORY` dictionaries.
-- `2_Development/2_1_Preprocessing/combine_zeek_fingerprints/reader.py`: reads Zeek logs and extracts the `IP -> MAC` map from the PCAP using `tshark`.
-- `2_Development/2_1_Preprocessing/combine_zeek_fingerprints/processor.py`: normalizes `conn.log`, `http.log`, and `ssl.log`, assigns devices, calculates/assigns `JA4X`, and joins the information by `connection_id`.
-- `2_Development/2_1_Preprocessing/combine_zeek_fingerprints/ja4x.py`: calculates the `JA4X` fingerprint from the certificates in `x509.log`.
-- `2_Development/2_1_Preprocessing/combine_zeek_fingerprints/__init__.py`: marks the folder as a Python package.
+All files are under `2_Development/2_1_Preprocessing/combine_zeek_fingerprints/`:
+
+- `combine_zeek_fingerprints.py`: main entry point; orchestrates the complete combination process.
+- `config.py`: defines input and output paths, the source PCAP, the Zeek log directory, and the `MAC_TO_DEVICE` / `MAC_TO_CATEGORY` dictionaries.
+- `reader.py`: reads Zeek logs and extracts the `IP -> MAC` map from the PCAP using `tshark`.
+- `processor.py`: normalizes `conn.log`, `http.log`, and `ssl.log`; assigns devices, calculates/assigns `JA4X`, and joins the information by `connection_id`.
+- `ja4x.py`: calculates the `JA4X` fingerprint from the certificates in `x509.log`.
+- `__init__.py`: marks the folder as a Python package.
 
 ### Main inputs
 
@@ -162,11 +164,13 @@ The fingerprint parameters extracted in this step are based on the JA4+ format d
 
 ### Files and modules used
 
-- `2_Development/2_1_Preprocessing/extract_raw_features.py`: main entry point for raw-feature extraction.
-- `2_Development/2_1_Preprocessing/extract_raw_features/config.py`: defines the input file, output file, base columns, and expected fingerprint columns.
-- `2_Development/2_1_Preprocessing/extract_raw_features/processor.py`: loads the CSV, calculates fingerprint coverage, converts timestamps, applies the active parsers, creates individual files, and saves the results.
-- `2_Development/2_1_Preprocessing/extract_raw_features/parsers.py`: contains the functions that split each fingerprint into its components.
-- `2_Development/2_1_Preprocessing/extract_raw_features/__init__.py`: exposes the package functions so they can be imported by the main script.
+All files are under `2_Development/2_1_Preprocessing/extract_raw_features/`:
+
+- `extract_raw_features.py`: main entry point for raw-feature extraction.
+- `config.py`: defines the input file, output file, base columns, and expected fingerprint columns.
+- `processor.py`: loads the CSV, calculates fingerprint coverage, converts timestamps, applies the active parsers, creates individual files, and saves the results.
+- `parsers.py`: contains the functions that split each fingerprint into its components.
+- `__init__.py`: exposes package functions so they can be imported by the main script.
 
 ### Main input
 
@@ -315,9 +319,9 @@ Evaluation summary:
 
 ## Results
 
-The following table summarizes the final test results reported in the notebooks. `Top-1` is equivalent to standard test accuracy. For the Random Forest decomposed-feature notebooks, the values shown correspond to the main model using all selected features for that experiment, not the later top-feature retraining experiment.
+The following table summarizes the final test results reported in the notebooks. `Accuracy` is equivalent to standard test accuracy. For the Random Forest decomposed-feature notebooks, the values shown correspond to the main model using all selected features for that experiment, not the later top-feature retraining experiment.
 
-| Model | Representation | Features | Macro F1 | Top-1 | Top-3 | Top-5 |
+| Model | Representation | Features | Macro F1 | Accuracy | Top-3 | Top-5 |
 |:---:|:---:|---|:---:|:---:|:---:|:---:|
 | Dictionary | Full fingerprint | `JA4` | 0.6627 | 0.8189 | 0.8227 | 0.8312 |
 | Dictionary | Full fingerprint | `JA4 + JA4S` | 0.6980 | 0.7929 | 0.8047 | 0.8402 |
@@ -343,7 +347,7 @@ The following table summarizes the final test results reported in the notebooks.
 
 This table isolates the Random Forest experiments that use decomposed features. It shows how performance changes when different JA4+ components are included.
 
-| Features used | Macro F1 | Top-1 | Top-3 | Top-5 |
+| Features used | Macro F1 | Accuracy | Top-3 | Top-5 |
 |---|:---:|:---:|:---:|:---:|
 | `JA4` | 0.6858 | 0.7736 | 0.9916 | 0.9992 |
 | `JA4 + SNI` | 0.8603 | 0.8394 | 0.9991 | 0.9991 |
