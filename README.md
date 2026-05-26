@@ -319,9 +319,9 @@ Evaluation summary:
 
 ## Results
 
-The following table summarizes the final test results reported in the notebooks. `Accuracy` is equivalent to standard test accuracy. For the Random Forest decomposed-feature notebooks, the values shown correspond to the main model using all selected features for that experiment, not the later top-feature retraining experiment.
+The following table summarizes the final test results reported in the notebooks. `Top-1` is equivalent to standard test accuracy. For the Random Forest decomposed-feature notebooks, the values shown correspond to the main model using all selected features for that experiment, not the later top-feature retraining experiment.
 
-| Model | Representation | Features | Macro F1 | Accuracy | Top-3 | Top-5 |
+| Model | Representation | Features | Macro F1 | Top-1 | Top-3 | Top-5 |
 |:---:|:---:|---|:---:|:---:|:---:|:---:|
 | Dictionary | Full fingerprint | `JA4` | 0.6627 | 0.8189 | 0.8227 | 0.8312 |
 | Dictionary | Full fingerprint | `JA4 + JA4S` | 0.6980 | 0.7929 | 0.8047 | 0.8402 |
@@ -347,7 +347,7 @@ The following table summarizes the final test results reported in the notebooks.
 
 This table isolates the Random Forest experiments that use decomposed features. It shows how performance changes when different JA4+ components are included.
 
-| Features used | Macro F1 | Accuracy | Top-3 | Top-5 |
+| Features used | Macro F1 | Top-1 | Top-3 | Top-5 |
 |---|:---:|:---:|:---:|:---:|
 | `JA4` | 0.6858 | 0.7736 | 0.9916 | 0.9992 |
 | `JA4 + SNI` | 0.8603 | 0.8394 | 0.9991 | 0.9991 |
