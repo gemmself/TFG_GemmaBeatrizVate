@@ -1,0 +1,89 @@
+"""Configuration constants for the Zeek fingerprint combiner."""
+
+from pathlib import Path
+
+BASE_DIR = Path("/mnt/d/TFG_GemmaBeatrizVate")
+ZEEK_LOG_DIR = BASE_DIR / "1_Data" / "zeek_logs" / "logs"
+PCAP_PATH = BASE_DIR / "1_Data" / "Original_Pcaps" / "BenignTraffic.pcap"
+OUTPUT_FILE = BASE_DIR / "1_Data" / "zeek_logs" / "combined_fingerprints.csv"
+
+# Mapping of known MAC addresses to normalized device names
+MAC_TO_DEVICE = {
+    "ac:17:02:05:34:27": "Fibaro_Home_Center_Lite_Hub",
+    "84:7a:b6:64:62:58": "Yi_Indoor_Camera",
+    "28:6d:97:7a:2b:2d": "SmartThings_Hub",
+    "70:ee:50:68:0e:32": "Netatmo_Camera",
+    "28:6d:97:9e:f4:d5": "AeoTec_Smart_Home_Hub",
+    "40:5d:82:35:14:c8": "Arlo_Q_Indoor_Camera",
+    "2c:71:ff:05:f1:15": "Amazon_Echo_Show_Audio",
+    "6c:5a:b0:44:1d:90": "TP_Link_Tapo_Camera",
+    "10:5a:17:97:a5:c6": "Rbcior_Camera",
+    "dc:a6:32:c9:e4:c6": "Raspberry_Pi_NextGen",
+    "a0:d0:dc:c4:08:ff": "Amazon_Alexa_Echo_Dot_2_Audio",
+    "7c:78:b2:86:0d:81": "Wyze_Camera",
+    "3c:37:86:6f:b9:51": "Arlo_Base_Station_Camera",
+    "d4:a6:51:20:91:d1": "Yutron_Plug_1_Power_Outlet",
+    "1c:fe:2b:98:16:dd": "Amazon_Alexa_Echo_Dot_1_Audio",
+    "d4:a6:51:30:64:b7": "HeimVision_Radio_Lamp_Lighting",
+    "84:7a:b6:62:3a:6c": "Yi_Indoor_2_Camera",
+    "d4:a6:51:21:6c:29": "Yutron_Plug_2_Power_Outlet",
+    "cc:f4:11:9c:d0:00": "Google_Nest_Mini_Audio",
+    "08:7c:39:ce:6e:2a": "Amazon_Alexa_Echo_Studio_Audio",
+    "b0:f1:ec:d3:e7:98": "Harman_Kardon_Audio",
+    "d4:a6:51:76:06:64": "Teckin_Plug_1_Power_Outlet",
+    "84:e3:42:42:ed:0b": "Lumiman_Bulb_Lighting",
+    "68:57:2d:56:ac:47": "Atomi_Coffee_Maker",
+    "d4:a6:51:78:97:4e": "Teckin_Plug_2_Power_Outlet",
+    "b8:5f:98:d0:76:e6": "Amazon_Plug_Power_Outlet",
+    "18:69:d8:eb:d4:3e": "Teckin_Light_Strip_Lighting",
+    "b0:09:da:3e:82:6c": "Ring_Base_Station_Hub",
+    "48:a6:b8:f9:1b:88": "Sonos_One_Speaker_Audio",
+    "00:17:88:60:d6:4f": "Philips_Hue_Bridge_Hub",
+    "2c:d2:6b:66:d2:87": "Yi_Outdoor_Camera",
+    "00:02:75:f6:e3:cb": "Smart_Board",
+    "8c:85:80:6c:b6:47": "Eufy_HomeBase_2_Hub",
+    "b0:c5:54:59:2e:99": "DCS8000LHA1_D_Link_Mini_Camera",
+    "50:02:91:10:09:8f": "GoSund_Smart_Plug_WP2_3",
+    "44:01:bb:ec:10:4a": "HeimVision_Smart_WiFi_Camera",
+    "c4:dd:57:0c:39:94": "GoSund_Smart_Plug_WP3_1",
+    "ac:f1:08:4e:00:82": "LG_Smart_TV",
+    "c4:dd:57:13:07:c6": "GoSund_Bulb_Lighting",
+    "f4:cf:a2:34:48:6b": "LampUX_RGB_Lighting",
+    "d4:ad:fc:29:c8:a2": "Govee_Smart_Humidifer",
+    "b8:f0:09:03:9a:af": "GoSund_Power_Strip_2",
+    "b8:f0:09:03:29:79": "GoSund_Smart_Plug_WP2_1",
+    "50:02:91:10:ac:d8": "GoSund_Smart_Plug_WP2_2",
+    "50:02:91:1a:ce:e1": "Gosund_Power_Strip_1",
+    "24:a1:60:14:7f:f9": "Gosund_Smart_Plug_WP3_2",
+    "9c:8e:cd:1d:ab:9f": "AMCREST_WiFi_Camera",
+    "44:bb:3b:00:39:07": "Nest_Indoor_Camera",
+    "30:23:03:f3:57:cb": "Wemo_smart_plug_2",
+    "dc:a6:32:dc:27:d5": "Raspberry_Pi_4_8_GB_Attacker",
+    "dc:a6:32:c9:e6:f4": "Raspberry_Pi_4_2_GB",
+}
+
+# Infer a coarse device category from the normalized device name
+def get_category(device_name):
+    """Infer a coarse device type from the normalized device name."""
+    name_lower = device_name.lower()
+    if any(w in name_lower for w in ["camera", "camara", "yi", "arlo", "netatmo", "wyze"]):
+        return "CAMERA"
+    elif any(w in name_lower for w in ["hub", "center", "station", "bridge"]):
+        return "HUB"
+    elif any(w in name_lower for w in ["audio", "speaker", "echo", "alexa", "sonos"]):
+        return "AUDIO"
+    elif any(w in name_lower for w in ["tv", "television"]):
+        return "TV"
+    elif any(w in name_lower for w in ["light", "lamp", "bulb"]):
+        return "LIGHTING"
+    elif any(w in name_lower for w in ["plug", "outlet", "power", "teckin", "gosund"]):
+        return "POWER"
+    elif any(w in name_lower for w in ["raspberry", "pi"]):
+        return "COMPUTER"
+    elif any(w in name_lower for w in ["coffee", "humidifer", "atomi"]):
+        return "SMART_DEVICE"
+    else:
+        return "OTHER"
+
+
+MAC_TO_CATEGORY = {mac: get_category(device) for mac, device in MAC_TO_DEVICE.items()}

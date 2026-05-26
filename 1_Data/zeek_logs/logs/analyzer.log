@@ -1,0 +1,13 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	analyzer
+#open	2026-04-23-23-07-38
+#fields	ts	analyzer_kind	analyzer_name	uid	fuid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	proto	failure_reason	failure_data
+#types	time	string	string	string	string	addr	port	addr	port	enum	string	string
+1665167890.001561	protocol	SSL	CYD59mWQIpdmWLxw8	-	192.168.137.41	44820	109.95.152.66	443	tcp	Invalid version late in TLS connection. Packet reported version: 26740	-
+1665168894.708690	packet	AYIYA	C2MIV6bCuYojbOTU6	-	192.168.137.51	60087	35.201.70.64	443	udp	Truncated AYIYA	-
+1665187570.877438	protocol	HTTP	CyM0xhySWT3kNTV59	-	192.168.137.250	45728	3.226.187.174	80	tcp	not a http request line	-
+1665188008.297102	packet	AYIYA	C0APZIt9T5FMDnhPc	-	192.168.137.47	55444	192.168.137.58	55444	udp	Truncated AYIYA	-
+#close	2026-04-23-23-17-47

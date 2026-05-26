@@ -1,0 +1,52 @@
+{
+  "experiment": "rf_ja4_ja4s_ja4t_ja4ts_full_fingerprint",
+  "signature_columns": [
+    "ja4",
+    "ja4s",
+    "ja4t",
+    "ja4ts"
+  ],
+  "class_names": [
+    "aeotec_smart_home_hub",
+    "amazon_alexa_echo_dot_1_audio",
+    "amazon_alexa_echo_dot_2_audio",
+    "amazon_alexa_echo_studio_audio",
+    "amazon_echo_show_audio",
+    "arlo_q_indoor_camera",
+    "atomi_coffee_maker",
+    "harman_kardon_audio",
+    "heimvision_smart_wifi_camera",
+    "lumiman_bulb_lighting",
+    "rbcior_camera",
+    "smartthings_hub",
+    "teckin_light_strip_lighting",
+    "teckin_plug_1_power_outlet",
+    "teckin_plug_2_power_outlet",
+    "unknown",
+    "yi_indoor_camera",
+    "yi_outdoor_camera",
+    "yutron_plug_1_power_outlet",
+    "yutron_plug_2_power_outlet"
+  ],
+  "best_params": {
+    "class_weight": "balanced",
+    "max_depth": 20,
+    "max_features": "sqrt",
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "n_estimators": 200
+  },
+  "metrics_summary": {
+    "test_accuracy": 0.7941176470588235,
+    "test_macro_precision": 0.5483333333333332,
+    "test_macro_recall": 0.65,
+    "test_macro_f1": 0.5721067821067821,
+    "top_3_accuracy": 0.9264705882352942,
+    "top_5_accuracy": 1.0,
+    "avg_prediction_time_ms": 50.92461617673775
+  },
+  "train_size": 231,
+  "test_size": 68,
+  "min_samples_per_device": 3,
+  "max_samples_per_device": 60
+}

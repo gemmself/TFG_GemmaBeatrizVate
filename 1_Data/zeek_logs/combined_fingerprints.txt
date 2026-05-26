@@ -1,0 +1,45 @@
+(venv) gemma@gemma:/mnt/d/TFG_GemmaBeatrizVate/2_Development/2_1_Preprocessing$ python3 combine_zeek_fingerprints.py
+======================================================================
+Combining Zeek fingerprints into a single CSV with JA4X calculation
+======================================================================
+
+1. EXTRACTING MAC ADDRESSES FROM THE PCAP...
+   1134 IP-to-MAC mappings
+
+2. LOADING LOGS...
+   conn.log: 161287
+   http.log: 17897
+   ssl.log: 24746
+   x509.log: 44
+
+3. PROCESSING LOGS...
+
+4. CALCULATING JA4X FROM X509.LOG...
+   Calculating JA4X for certificates...
+   JA4X calculated: 39 certificates
+   Assigning JA4X using column: cert_chain_fps
+   JA4X assigned: 346/24746 (1.4%)
+
+5. ASSIGNING DEVICES...
+
+6. COMBINING DATA...
+
+7. SAVING...
+
+File: /mnt/d/TFG_GemmaBeatrizVate/1_Data/zeek_logs/combined_fingerprints.csv
+Records: 162362
+Columns: 26
+
+Identified devices: 52
+Identified records: 127356/162362 (78.4%)
+ja4: 24746/162362 (15.2%)
+ja4s: 24746/162362 (15.2%)
+ja4x: 346/162362 (0.2%)
+ja4h: 17897/162362 (11.0%)
+ja4l: 162362/162362 (100.0%)
+ja4ls: 162362/162362 (100.0%)
+ja4t: 162362/162362 (100.0%)
+ja4ts: 162362/162362 (100.0%)
+
+======================================================================
+PROCESS COMPLETED

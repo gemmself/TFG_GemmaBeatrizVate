@@ -1,0 +1,72 @@
+(venv) gemma@gemma:/mnt/d/TFG_GemmaBeatrizVate/2_Development/2_1_Preprocessing$ python3 extract_raw_features.py 
+============================================================
+JA4+ RAW FEATURE EXTRACTOR
+============================================================
+Input file: /mnt/d/TFG_GemmaBeatrizVate/1_Data/zeek_logs/combined_fingerprints.csv
+Output file: /mnt/d/TFG_GemmaBeatrizVate/1_Data/raw_fingerprints/raw_features.csv
+============================================================
+
+Reading file: /mnt/d/TFG_GemmaBeatrizVate/1_Data/zeek_logs/combined_fingerprints.csv
+   Rows: 162362
+   Original columns: 26
+
+Available fingerprint columns:
+    ja4: 24746/162362 (15.2%)
+    ja4s: 24746/162362 (15.2%)
+    ja4x: 346/162362 (0.2%)
+    ja4h: 17897/162362 (11.0%)
+    ja4l: 162362/162362 (100.0%)
+    ja4ls: 162362/162362 (100.0%)
+    ja4t: 162362/162362 (100.0%)
+    ja4ts: 162362/162362 (100.0%)
+    sni: 6488/162362 (4.0%)
+
+Timestamp converted: 162362 valid values, 0 invalid values
+
+Processing JA4 (ja4)...
+   8 features extracted
+
+Processing JA4S (ja4s)...
+   6 features extracted
+
+Processing JA4X (ja4x)...
+   3 features extracted
+
+Processing JA4T (ja4t)...
+   8 features extracted
+
+Processing JA4TS (ja4ts)...
+   8 features extracted
+
+Processing SNI (sni)...
+   1 features extracted
+   Individual file saved: /mnt/d/TFG_GemmaBeatrizVate/1_Data/raw_fingerprints/JA4_raw.csv
+   Individual file saved: /mnt/d/TFG_GemmaBeatrizVate/1_Data/raw_fingerprints/JA4S_raw.csv
+   Individual file saved: /mnt/d/TFG_GemmaBeatrizVate/1_Data/raw_fingerprints/JA4X_raw.csv
+   Individual file saved: /mnt/d/TFG_GemmaBeatrizVate/1_Data/raw_fingerprints/JA4T_raw.csv
+   Individual file saved: /mnt/d/TFG_GemmaBeatrizVate/1_Data/raw_fingerprints/JA4TS_raw.csv
+   Individual file saved: /mnt/d/TFG_GemmaBeatrizVate/1_Data/raw_fingerprints/SNI_raw.csv
+Adding original fingerprints: ['ja4', 'ja4s', 'ja4x', 'ja4h', 'ja4l', 'ja4ls', 'ja4t', 'ja4ts', 'sni']
+
+FINAL SUMMARY:
+   - Rows: 162362
+   - Total columns: 54
+   - Identification columns: 11
+   - Original fingerprint columns: 9
+   - Calculated RTT columns: 0
+   - Raw feature columns: 34
+
+Features by fingerprint type:
+   - JA4: 8 features
+   - JA4S: 6 features
+   - JA4X: 3 features
+   - JA4T: 8 features
+   - JA4TS: 8 features
+   - SNI: 1 features
+
+Saving FULL version...
+   File saved: /mnt/d/TFG_GemmaBeatrizVate/1_Data/raw_fingerprints/raw_features.csv
+
+============================================================
+PROCESS COMPLETED SUCCESSFULLY
+============================================================

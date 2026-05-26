@@ -1,0 +1,41 @@
+{
+  "experiment": "rf_ja4_plus_full_fingerprint",
+  "signature_columns": [
+    "ja4",
+    "ja4s",
+    "ja4t",
+    "ja4ts",
+    "ja4x"
+  ],
+  "class_names": [
+    "amazon_alexa_echo_dot_2_audio",
+    "amazon_echo_show_audio",
+    "harman_kardon_audio",
+    "heimvision_smart_wifi_camera",
+    "rbcior_camera",
+    "smartthings_hub",
+    "yi_indoor_camera",
+    "yi_outdoor_camera"
+  ],
+  "best_params": {
+    "class_weight": "balanced",
+    "max_depth": 20,
+    "max_features": "sqrt",
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "n_estimators": 100
+  },
+  "metrics_summary": {
+    "test_accuracy": 0.9090909090909091,
+    "test_precision": 0.8125,
+    "test_recall": 0.875,
+    "test_f1": 0.8333333333333333,
+    "top_3_accuracy": 1.0,
+    "top_5_accuracy": 1.0,
+    "avg_prediction_time_ms": 58.911768181133084
+  },
+  "train_size": 74,
+  "test_size": 22,
+  "min_samples_per_device": 3,
+  "max_samples_per_device": 60
+}

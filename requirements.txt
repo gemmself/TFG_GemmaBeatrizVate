@@ -1,0 +1,29 @@
+# requirements.txt
+# Python dependencies for TFG_GemmaBeatrizVate
+
+# Network and Data Analysis
+scapy
+pandas
+numpy
+
+
+# Visualization
+matplotlib
+seaborn
+# plotly
+kaleido
+plotly_get_chrome
+
+# Utilities
+jupyter
+tqdm
+joblib
+openpyxl
+
+scikit-learn 
+joblib 
+
+
+# tshark -> sudo apt install tshark
+# 4.0.6 or higher
+# wireshark -> sudo apt install wireshark
