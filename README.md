@@ -318,7 +318,7 @@ Evaluation summary:
 The following table summarizes the final test results reported in the notebooks. `Top-1` is equivalent to standard test accuracy. For the Random Forest decomposed-feature notebooks, the values shown correspond to the main model using all selected features for that experiment, not the later top-feature retraining experiment.
 
 | Model | Representation | Features | Macro F1 | Top-1 | Top-3 | Top-5 |
-|---|---|---|:---:|:---:|:---:|:---:|
+|:---:|:---:|---|:---:|:---:|:---:|:---:|
 | Dictionary | Full fingerprint | `JA4` | 0.6627 | 0.8189 | 0.8227 | 0.8312 |
 | Dictionary | Full fingerprint | `JA4 + JA4S` | 0.6980 | 0.7929 | 0.8047 | 0.8402 |
 | Dictionary | Full fingerprint | `JA4 + JA4X` | 0.5812 | 0.7903 | 0.8710 | 0.8710 |
@@ -357,7 +357,7 @@ This table isolates the Random Forest experiments that use decomposed features. 
 
 The decomposed-feature notebooks also retrain the Random Forest using only the most important original parsed fields. This checks whether a smaller subset of features can preserve the performance of the full decomposed representation.
 
-| Features | All-feature macro F1 | Top-feature macro F1 | All-feature Top-1 | Top-feature Top-1 |
+| Features | All-feature macro F1 | Top-feature macro F1 | All-feature Accuracy | Top-feature Accuracy |
 |---|:---:|:---:|:---:|:---:|
 | `JA4` | 0.6858 | 0.6845 | 0.7736 | 0.7759 |
 | `JA4 + SNI` | 0.8603 | 0.8582 | 0.8394 | 0.8394 |
@@ -369,7 +369,7 @@ The decomposed-feature notebooks also retrain the Random Forest using only the m
 
 ### Accuracy comparison: full, all-feature, top-feature
 
-| Features | Full-fingerprint Top-1 | All-feature Top-1 | Top-feature Top-1 |
+| Features | Full-fingerprint Accuracy | All-feature Accuracy | Top-feature Accuracy |
 |---|:---:|:---:|:---:|
 | `JA4` | 0.7751 | 0.7736 | 0.7759 |
 | `JA4 + JA4S` | 0.7929 | 0.7979 | 0.7047 |
@@ -381,7 +381,7 @@ The decomposed-feature notebooks also retrain the Random Forest using only the m
 The following table lists the specific top features used in each retraining experiment. These subsets are the selected top-ranked features for this implementation, but the number of features is not fixed: more or fewer fields can be used depending on the desired trade-off between performance, interpretability, dimensionality reduction, and robustness.
 
 | Experiment | Number of top features | Top features used |
-|---|---:|---|
+|---|:---:|---|
 | `JA4` | 5 | `ja4_extension_hash`, `ja4_cipher_hash`, `ja4_n_extensions`, `ja4_n_ciphers`, `ja4_alpn` |
 | `JA4 + SNI` | 5 | `ja4_extension_hash`, `sni`, `ja4_cipher_hash`, `ja4_n_extensions`, `ja4_alpn` |
 | `JA4 + JA4S` | 8 | `ja4_cipher_hash`, `ja4_extension_hash`, `ja4s_extension_hash`, `ja4s_cipher_chosen`, `ja4_n_extensions`, `ja4_n_ciphers`, `ja4s_n_extensions`, `ja4_alpn` |
