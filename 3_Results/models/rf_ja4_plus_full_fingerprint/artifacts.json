@@ -32,7 +32,7 @@
     "test_f1": 0.8333333333333333,
     "top_3_accuracy": 1.0,
     "top_5_accuracy": 1.0,
-    "avg_prediction_time_ms": 58.911768181133084
+    "avg_prediction_time_ms": 31.78093179171397
   },
   "train_size": 74,
   "test_size": 22,

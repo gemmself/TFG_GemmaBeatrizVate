@@ -42,7 +42,7 @@
     "test_macro_f1": 0.6126623376623377,
     "top_3_accuracy": 0.9264705882352942,
     "top_5_accuracy": 1.0,
-    "avg_prediction_time_ms": 55.464980878134476
+    "avg_prediction_time_ms": 45.488948519478605
   },
   "train_size": 231,
   "test_size": 68,
