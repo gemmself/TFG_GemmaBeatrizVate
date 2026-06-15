@@ -1,7 +1,6 @@
 ## TFG Gemma Beatriz Vate
 
-## Encrypted IoT network traffic 
-# classification with JA4+ fingerprints
+# Encrypted IoT network traffic classification with JA4+ fingerprints
 
 This thesis focuses on identifying and classifying network traffic using digital fingerprints based on the JA4+ algorithms. The main goal is to develop and evaluate an efficient method for analysing traffic patterns in network environments, making it possible to distinguish between different IoT devices and traffic behaviours even when communications are encrypted.
 
