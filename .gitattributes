@@ -1,0 +1,2 @@
+JA4+[[:space:]]IoT[[:space:]]MDPI/1_Data/raw_fingerprints/cic_iot_raw_features.csv filter=lfs diff=lfs merge=lfs -text
+JA4+[[:space:]]IoT[[:space:]]MDPI/1_Data/raw_fingerprints/unsw_raw_features.csv filter=lfs diff=lfs merge=lfs -text
