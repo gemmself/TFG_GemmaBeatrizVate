@@ -1,0 +1,54 @@
+gemma@gemma:/mnt/c/Users/gemma/Desktop/TFG_GemmaBeatrizVate/UNSW-IoTraffic$ chmod +x scripts/merge_and_run_zeek_unsw.sh
+./scripts/merge_and_run_zeek_unsw.sh
+=== Procesando capturas PCAP con Zeek en paralelo (8 núcleos) ===
+[+] Procesando en RAM: AmazonEcho_44650d56ccd3.pcap
+[+] Procesando en RAM: AugustDoorBell_e076d03f00ae.pcap
+[+] Procesando en RAM: AwairAirQuality_70886b100fc6.pcap
+[+] Procesando en RAM: BelkinWemoMotionSensor_ec1a59832811.pcap
+[+] Procesando en RAM: BlipCareBPMeter_746a89002e25.pcap
+[+] Procesando en RAM: BelkinWemoSwitch_ec1a5979f489.pcap
+[+] Procesando en RAM: BelkinCamera_b4750eece5a9.pcap
+[+] Procesando en RAM: CanaryCamera_7c70bc5d5edc.pcap
+[+] Procesando en RAM: HelloBarbie_28c2ddffa52d.pcap
+[+] Procesando en RAM: HPPrinter_705a0fe49bc0.pcap
+[+] Procesando en RAM: iHome_74c63b29d71d.pcap
+[+] Procesando en RAM: LiFXBulb_d073d5018308.pcap
+[+] Procesando en RAM: NestDropCam_308cfb2fe4b2.pcap
+1488686358.149493 fatal error in <params>, line 1: failed to read a packet from /mnt/c/Users/gemma/Desktop/TFG_GemmaBeatrizVate/UNSW-IoTraffic/pcaps/CanaryCamera_7c70bc5d5edc.pcap: truncated pcapng dump file; tried to read 1540 bytes, only got 1436
+[+] Procesando en RAM: NestProtectSmokeAlarm_18b43025bee4.pcap
+[+] Procesando en RAM: NetatmoWeatherStation_70ee5003b8ac.pcap
+[+] Procesando en RAM: NetatmoWelcome_70ee50183443.pcap
+[+] Procesando en RAM: PhilipsHue_0017882b9a25.pcap
+[+] Procesando en RAM: PixStarPhotoFrame_e076d033bb85.pcap
+[+] Procesando en RAM: RingDoorBell_884aea31669d.pcap
+[+] Procesando en RAM: SamsungCamera_00166cab6b88.pcap
+[+] Procesando en RAM: SamsungSmartThings_d052a800675e.pcap
+[+] Procesando en RAM: TPLinkCamera_f4f26D9351f1.pcap
+[+] Procesando en RAM: TPLinkSmartPlug_50c7bf005639.pcap
+[+] Procesando en RAM: TribySpeaker_18B79E022044.pcap
+[+] Procesando en RAM: WithingsBabyMonitor_0024e41118a8.pcapng
+[+] Procesando en RAM: WithingsSleepSensor_0024e42028c6.pcap
+[+] Procesando en RAM: WithingsSmartScale_0024e41b6f96.pcap
+^[[20;1R1491004799.780897 error in /mnt/c/Users/gemma/Desktop/TFG_GemmaBeatrizVate/UNSW-IoTraffic/0_Init/ja4/zeek/ja4l/main.zeek, lines 125-126: JA4L negative duration: (first_client_data - server_hello)/2=-43053.500000 uid=C6tHK34wExLIEyBu id=[orig_h=192.168.1.216, orig_p=58210/tcp, resp_h=148.62.0.116, resp_p=443/tcp, proto=6, ctx=[]]
+1491177599.319500 error in /mnt/c/Users/gemma/Desktop/TFG_GemmaBeatrizVate/UNSW-IoTraffic/0_Init/ja4/zeek/ja4l/main.zeek, lines 125-126: JA4L negative duration: (first_client_data - server_hello)/2=-42271.000000 uid=CH89vu4fsjl1NO1v1h id=[orig_h=192.168.1.216, orig_p=59773/tcp, resp_h=148.62.0.116, resp_p=443/tcp, proto=6, ctx=[]]
+=== Consolidando logs de Zeek en disco ===
+[✔] Logs consolidados generados con éxito en: /mnt/c/Users/gemma/Desktop/TFG_GemmaBeatrizVate/UNSW-IoTraffic/1_Data/zeek_logs/logs
+total 2.9G
+-rwxrwxrwx 1 gemma gemma   14K Sep  1 21:53 analyzer.log
+-rwxrwxrwx 1 gemma gemma 1023M Sep  1 21:53 conn.log
+-rwxrwxrwx 1 gemma gemma   17M Sep  1 21:53 dhcp.log
+-rwxrwxrwx 1 gemma gemma  216M Sep  1 21:53 dns.log
+-rwxrwxrwx 1 gemma gemma  145M Sep  1 21:53 files.log
+-rwxrwxrwx 1 gemma gemma  318M Sep  1 21:53 http.log
+-rwxrwxrwx 1 gemma gemma   61M Sep  1 21:53 ja4d.log
+-rwxrwxrwx 1 gemma gemma  1.4K Sep  1 21:52 ntlm.log
+-rwxrwxrwx 1 gemma gemma  118M Sep  1 21:53 ntp.log
+-rwxrwxrwx 1 gemma gemma  1.4K Sep  1 21:53 packet_filter.log
+-rwxrwxrwx 1 gemma gemma   878 Sep  1 21:51 reporter.log
+-rwxrwxrwx 1 gemma gemma  7.4K Sep  1 21:52 sip.log
+-rwxrwxrwx 1 gemma gemma  3.4K Sep  1 21:53 snmp.log
+-rwxrwxrwx 1 gemma gemma  999M Sep  1 21:53 ssl.log
+-rwxrwxrwx 1 gemma gemma  3.6K Sep  1 21:52 syslog.log
+-rwxrwxrwx 1 gemma gemma   446 Sep  1 21:52 tunnel.log
+-rwxrwxrwx 1 gemma gemma   13M Sep  1 21:53 weird.log
+-rwxrwxrwx 1 gemma gemma  1.5M Sep  1 21:53 x509.log

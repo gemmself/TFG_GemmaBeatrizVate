@@ -1,0 +1,65 @@
+gemma@gemma:/mnt/c/Users/gemma/Desktop/TFG_GemmaBeatrizVate/UNSW-IoTraffic/2_Development/2_1_Preprocessing$ python3 combine_zeek_fingerprints.py 
+======================================================================
+Combining Zeek fingerprints into a single CSV with JA4X calculation (UNSW)
+======================================================================
+
+1. LOADING LOGS...
+   conn.log: 6403764
+   http.log: 823784
+   ssl.log: 748002
+   x509.log: 3923
+   dhcp.log: 101717
+
+2. EXTRACTING IP-TO-MAC MAPPINGS FROM LOGS & PCAPS...
+   29 IP-to-MAC mappings extracted
+
+3. PROCESSING LOGS...
+
+4. CALCULATING JA4X FROM X509.LOG...
+   Calculating JA4X for certificates...
+   JA4X calculated: 226 certificates
+   Assigning JA4X using column: cert_chain_fps
+   JA4X assigned: 746433/748002 (99.8%)
+
+5. ASSIGNING DEVICES...
+
+6. COMBINING DATA (Focusing on Encrypted/TLS traffic)...
+
+7. SAVING...
+
+File: /mnt/c/Users/gemma/Desktop/TFG_GemmaBeatrizVate/UNSW-IoTraffic/1_Data/unsw_combined_fingerprints.csv
+Records: 747985
+Columns: 26
+
+Identified devices: 22
+Identified records: 742698/747985 (99.3%)
+
+Device distribution:
+device_name
+August_Doorbell            631205
+iHome_Plug                  56646
+Netatmo_Welcome_Camera      25520
+Hello_Barbie                11974
+Canary_Camera                5876
+UNKNOWN                      5287
+Withings_Sleep_Sensor        4353
+Triby_Speaker                3627
+PixStar_Photo_Frame          1048
+Awair_Air_Quality             826
+TPLink_Smart_Plug             416
+Belkin_Camera                 316
+HP_Printer                    204
+Samsung_Camera                154
+LiFX_Bulb                     132
+Nest_DropCam                  107
+Ring_DoorBell                 103
+Withings_Smart_Scale          101
+Samsung_SmartThings_Hub        46
+TPLink_Camera                  27
+BlipCare_BP_Meter              10
+Philips_Hue_Bridge              7
+Name: count, dtype: int64
+
+======================================================================
+PROCESS COMPLETED
+======================================================================
